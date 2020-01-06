@@ -24,25 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.css"
             ],
             "scripts": [
-              "src/assets/js/jquery-3.3.1.min.js",
-              "src/assets/js/jquery-migrate-3.0.1.min.js",
-              "src/assets/js/jquery-ui.js",
-              "src/assets/js/popper.min.js",
-              "src/assets/js/bootstrap.min.js",
-              "src/assets/js/owl.carousel.min.js",
-              "src/assets/js/jquery.stellar.min.js",
-              "src/assets/js/jquery.countdown.min.js",
-              "src/assets/js/jquery.magnific-popup.min.js",
-              "src/assets/js/bootstrap-datepicker.min.js",
-              "src/assets/js/swiper.min.js",
-              "src/assets/js/aos.js",
-              "src/assets/js/picturefill.min.js",
-              "src/assets/js/lightgallery-all.min.js",
-              "src/assets/js/jquery.mousewheel.min.js",
-              "src/assets/js/main.js"
             ]
           },
           "configurations": {
