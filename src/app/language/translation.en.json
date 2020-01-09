@@ -1,5 +1,11 @@
 {
-    "appName": "Application",
-    "email": "email",
-    "password": "password"
+  "appName": "Application",
+  "email": "email",
+  "password": "password",
+  "successPH": "Success",
+  "errorPH": "Error",
+  "warningPH": "Warning",
+  "infoPH": "Info",
+  "primaryPH": "Primary",
+  "yourAccountNotActive": "yourAccountNotActive"
 }

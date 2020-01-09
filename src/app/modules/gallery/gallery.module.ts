@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from "@angular/common";
 import { Routes, RouterModule } from '@angular/router';
 
 import { GalleryComponent } from './gallery.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
         GalleryComponent
     ],
     imports: [
+        CommonModule,
         RouterModule.forChild(routes)
     ],
     providers: [],
