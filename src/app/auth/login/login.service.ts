@@ -38,6 +38,6 @@ export class LoginService {
 
     Logout() {
         localStorage.clear();
-        return this.router.navigate(['/']);
+        return this.router.navigate(['/login']);
     }
 }

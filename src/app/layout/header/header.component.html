@@ -18,48 +18,15 @@
       <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
         <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
           <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+            <!-- i need to manage this with subject event listner -->
+            <li *ngIf="isAuth">
+              <a routerLink="admin" routerLinkActive="active">Admin</a>
+            </li>
             <li>
               <a routerLink="home" routerLinkActive="active">Home</a>
             </li>
             <li>
               <a routerLink="gallery" routerLinkActive="active">Gallery</a>
-              <!-- <ul class="dropdown">
-                <li>
-                  <a href="#">Nature</a>
-                </li>
-                <li>
-                  <a href="#">Portrait</a>
-                </li>
-                <li>
-                  <a href="#">People</a>
-                </li>
-                <li>
-                  <a href="#">Architecture</a>
-                </li>
-                <li>
-                  <a href="#">Animals</a>
-                </li>
-                <li>
-                  <a href="#">Sports</a>
-                </li>
-                <li>
-                  <a href="#">Travel</a>
-                </li>
-                <l  i class="has-children">
-                  <a href="#">Sub Menu</a>
-                  <ul class="dropdown">
-                    <li>
-                      <a href="#">Menu One</a>
-                    </li>
-                    <li>
-                      <a href="#">Menu Two</a>
-                    </li>
-                    <li>
-                      <a href="#">Menu Three</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul> -->
             </li>
             <li>
               <a routerLink="/home">Services</a>
@@ -113,7 +80,6 @@
 
               <ul *ngIf="isAuth" class="dropdown-menu">
                 <li>
-                  <!-- <a class="dropdown-item" routerLink="/Logout">Login</a> -->
                   <span class="dropdown-item" (click)="logout()">Logout</span>
                 </li>
                 <li>

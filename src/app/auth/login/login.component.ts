@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
     // redirect to home if authenticated
     if (this.loginService.isLogin()) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/admin']);
     }
 
     // form builder
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
         const body = response['body'];
         this.loginService.setLocalStorageData(body);
         this.helperService.showSuccess(response['message'])
-        this.router.navigate(["/home"]);
+        this.router.navigate(["/admin"]);
       }, err => {
         let errMessage = err.error.message;
         this.helperService.showError(errMessage);
