@@ -43,28 +43,28 @@ export class HelperService {
     }
 
     showSuccess(message) {
-        const successMessage = this.parseErrorMessage(message);
+        const successMessage = message;
         // const title = this.translationService.getLocalizedString(['successPH']);
         const title = "Success";
         this.toasterService.success(successMessage, title);
     }
 
     showError(message) {
-        const errorMessage = this.parseErrorMessage(message);
+        const errorMessage = message;
         // const title = this.translationService.getLocalizedString(['errorPH']);
         const title = "Error";
         this.toasterService.error(errorMessage, title);
     }
 
     showWarning(message) {
-        const warningMessage = this.parseErrorMessage(message);
+        const warningMessage = message;
         // const title = this.translationService.getLocalizedString(['warningPH']);
         const title = "Warning";
         this.toasterService.warning(warningMessage, title);
     }
 
     showInfo(message) {
-        const infoMessage = this.parseErrorMessage(message);
+        const infoMessage = message;
         // const title = this.translationService.getLocalizedString(['infoPH']);
         const title = "Info";
         this.toasterService.info(infoMessage, title);
@@ -78,31 +78,31 @@ export class HelperService {
     // }
 
 
-    parseErrorMessage(message) {
-        let errorMessage = '';
-        try {
-            const errorParse = JSON.parse(message);
-            errorMessage = errorParse.error || errorParse.message;
-        } catch (e) {
-            if (typeof message === 'object') {
-                errorMessage = message.message;
-            } else {
-                errorMessage = message;
-            }
-        }
-        return errorMessage;
-    }
+    // parseErrorMessage(message) {
+    //     let errorMessage = '';
+    //     try {
+    //         const errorParse = JSON.parse(message);
+    //         errorMessage = errorParse.error || errorParse.message;
+    //     } catch (e) {
+    //         if (typeof message === 'object') {
+    //             errorMessage = message.message;
+    //         } else {
+    //             errorMessage = message;
+    //         }
+    //     }
+    //     return errorMessage;
+    // }
 
-    handleError(error) {
-        const errResp = error.error;
-        if (error.status === 401) {
-            localStorage.clear();
-            this.router.navigate(['/login']);
-            return this.showError(errResp.message);
-        } else {
-            return this.showError(errResp.error);
-        }
-    }
+    // handleError(error) {
+    //     const errResp = error.error;
+    //     if (error.status === 401) {
+    //         localStorage.clear();
+    //         this.router.navigate(['/login']);
+    //         return this.showError(errResp.message);
+    //     } else {
+    //         return this.showError(errResp.message);
+    //     }
+    // }
 
     printLog(log: any) {
         let env = "developement";

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Injectable({
     providedIn: 'root'
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 
 export class LoginService {
 
-    constructor() { }
+    constructor(private router: Router) { }
 
     isLogin() {
         return !!localStorage.getItem("token");
@@ -19,16 +20,24 @@ export class LoginService {
 
     getLocalStorageData() {
         return {
-            _id: localStorage.getItem("_id"),
-            restaurantName: localStorage.getItem("restaurantName"),
-            username: localStorage.getItem("username"),
-            ownerName: localStorage.getItem("ownerName"),
-            city: localStorage.getItem("city"),
-            address: localStorage.getItem("address")
+            id: localStorage.getItem("id"),
+            email: localStorage.getItem("email"),
+            isAdmin: localStorage.getItem("isAdmin"),
+            roleId: localStorage.getItem("roleId"),
+            token: localStorage.getItem("token")
         };
     }
 
+    setLocalStorageData(data) {
+        for (const key in data) {
+            if (data.hasOwnProperty(key)) {
+                localStorage.setItem(key, data[key]);
+            }
+        }
+    }
+
     Logout() {
-        return localStorage.clear();
+        localStorage.clear();
+        return this.router.navigate(['/']);
     }
 }

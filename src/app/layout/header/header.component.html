@@ -62,13 +62,13 @@
               </ul> -->
             </li>
             <li>
-              <a href="#">Services</a>
+              <a routerLink="/home">Services</a>
             </li>
             <li>
-              <a routerLink="about" routerLinkActive="active">About</a>
+              <a routerLink="/about" routerLinkActive="active">About</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a routerLink="/home">Contact</a>
             </li>
           </ul>
         </nav>
@@ -98,17 +98,29 @@
               </a>
             </li>
             <li class="dropdown dropleft float-right pl-3 pr-3">
-              <!-- <a href="#" class="pl-3 pr-3"> -->
-              <i class="fa fa-user" aria-hidden="true" data-toggle="dropdown"></i>
-              <!-- </a> -->
-              <ul class="dropdown-menu">
+              <span data-toggle="dropdown">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </span>
+
+              <ul *ngIf="!isAuth" class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="#">Login</a>
+                  <a class="dropdown-item" routerLink="/login">Login</a>
                 </li>
                 <li>
-                  <a class="dropdown-item disabled">Sign Up</a>
+                  <a class="dropdown-item disabled">SignUp</a>
                 </li>
               </ul>
+
+              <ul *ngIf="isAuth" class="dropdown-menu">
+                <li>
+                  <!-- <a class="dropdown-item" routerLink="/Logout">Login</a> -->
+                  <span class="dropdown-item" (click)="logout()">Logout</span>
+                </li>
+                <li>
+                  <a class="dropdown-item disabled">Profile</a>
+                </li>
+              </ul>
+
             </li>
           </ul>
         </div>

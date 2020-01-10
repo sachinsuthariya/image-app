@@ -14,12 +14,14 @@ import { HomeModule } from './modules/home/home.module';
 import { GalleryModule } from './modules/gallery/gallery.module';
 import { AboutModule } from './modules/about/about.module';
 import { AuthModule } from './auth/auth.module';
+import { AdminComponent } from './modules/admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

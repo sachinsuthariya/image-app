@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, Validators.minLength(6)]],
-      // isAdmin: ['']
+      // isAdmin: [false]
     });
 
 
@@ -45,23 +45,23 @@ export class LoginComponent implements OnInit {
   get loginFormControl() { return this.loginForm.controls; }
 
   passwordToggle() {
-    console.log(!this.showPassword);
-
     return this.showPassword = !this.showPassword;
   }
 
   loginSubmit() {
     this.submitted = true;
     if (!this.loginForm.valid) return false;
-    const {
-      email,
-      password
-    } = this.loginForm.value;
+
     this.apiService.login(this.loginForm.value)
       .subscribe(res => {
-        console.log("res", res);
+        const response = res;
+        const body = response['body'];
+        this.loginService.setLocalStorageData(body);
+        this.helperService.showSuccess(response['message'])
+        this.router.navigate(["/home"]);
       }, err => {
-        this.helperService.printLog(err);
+        let errMessage = err.error.message;
+        this.helperService.showError(errMessage);
       });
   }
 

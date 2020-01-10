@@ -43,31 +43,23 @@ export class APIsService {
     postApiResponse(url: string, data: Object): Observable<Object> {
         const options = this.getHeaders();
         return this.http
-            .post(API_URL + url, data, options)
-            .map((res: Response) => res.json())
-            .catch((e: any) => Observable.throw(this.helperService.handleError(e)));
+            .post(API_URL + url, data, options);
     }
 
     putApiResponse(url: string, data: Object): Observable<Object> {
         const options = this.getHeaders();
         return this.http
-            .put(API_URL + url, data, options)
-            .map((res: Response) => res.json())
-            .catch((e: any) => Observable.throw(this.helperService.handleError(e)));
+            .put(API_URL + url, data, options);
     }
 
     deleteApiResponse(url: string): Observable<Object> {
         const options = this.getHeaders();
-        return this.http.delete(API_URL + url, options)
-            .map((res: Response) => res.json())
-            .catch((e: any) => Observable.throw(this.helperService.handleError(e)));
+        return this.http.delete(API_URL + url, options);
     }
 
     getApiResponse(url: string): Observable<any> {
         const options = this.getHeaders();
-        return this.http.get(API_URL + url, options)
-            .map((res: Response) => res.json())
-            .catch((e: any) => Observable.throw(this.helperService.handleError(e)));
+        return this.http.get(API_URL + url, options);
     }
 
 
